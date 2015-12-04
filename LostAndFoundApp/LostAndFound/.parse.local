@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "LostAndFound": {
+      "applicationId": "cwWhT5nGZRriLl7DRpSeD46xx7sgksXlRSErQO3Q"
+    },
+    "_default": {
+      "link": "LostAndFound"
+    }
+  }
+}
