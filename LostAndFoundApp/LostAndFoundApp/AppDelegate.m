@@ -10,7 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <Parse/Parse.h>
-#import "LoginViewController.h""
+#import "LoginViewController.h"
 #import <EstimoteSDK/EstimoteSDK.h>
 #import "BeaconNotificationsManager.h"
 @interface AppDelegate () <ESTBeaconManagerDelegate>
@@ -246,6 +246,31 @@
 {
     NSLog(@"locationManager:didFailWithError");
 }
+
+-(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width
+{
+    float oldWidth = sourceImage.size.width;
+    float scaleFactor = i_width / oldWidth;
+    
+    float newHeight = sourceImage.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+- (void) setbackground: (UIView*) view
+{
+     UIImage *image = [self imageWithImage:[UIImage imageNamed:@"ibecon.png"] scaledToWidth:view.frame.size.width];
+    view.backgroundColor = [UIColor colorWithPatternImage:image];
+
+}
+
+
+
 
 
 @end

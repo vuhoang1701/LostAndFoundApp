@@ -17,23 +17,29 @@
 @end
 
 @implementation LoginViewController
+{
+    
+    PFLogInViewController *logInViewController;
+    PFSignUpViewController *signUpViewController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     if([PFUser currentUser] != nil)
     {
         [self gotoTabbarView];
     }
     else
     {
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
         logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton|PFLogInFieldsFacebook|
         PFLogInFieldsSignUpButton|PFLogInFieldsPasswordForgotten;
 
         // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
         
         // Assign our sign up controller to be displayed from the login controller
@@ -45,7 +51,85 @@
         //self.view.opaque = NO;
     }
 
+    [self setUpGUILogin:logInViewController];
+    [self setUpGUISignUp:signUpViewController];
+
 }
+
+-(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width
+{
+    float oldWidth = sourceImage.size.width;
+    float scaleFactor = i_width / oldWidth;
+    
+    float newHeight = sourceImage.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+-(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width withHeight: (float) i_height
+{
+    
+    float newHeight = i_height;
+    float newWidth = i_width;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+-( void)setUpGUILogin:(PFLogInViewController*) loginview
+{
+    UIImage *image = [self imageWithImage:[UIImage imageNamed:@"background.png"] scaledToWidth:self.view.frame.size.width];
+    [loginview.logInView.logo sizeToFit];
+    loginview.logInView.logo.frame = CGRectMake(loginview.logInView.logo.frame.origin.x, loginview.logInView.logo.frame.origin.y , 300,  53);
+    UIImage *logoImage = [self imageWithImage: [UIImage imageNamed:@"logo.png"] scaledToWidth:loginview.logInView.logo.frame.size.width withHeight:loginview.logInView.logo.frame.size.height] ;
+    UIView *view= [[UIView alloc]initWithFrame:CGRectMake(0, 0, loginview.logInView.logo.frame.size.width, loginview.logInView.logo.frame.size.height)];
+    [view setBackgroundColor:[UIColor colorWithPatternImage:logoImage]];
+    loginview.view.backgroundColor = [UIColor colorWithPatternImage:image];
+
+    loginview.logInView.logo = view;
+    
+}
+
+-( void)setUpGUISignUp:(PFSignUpViewController*) loginview
+{
+    UIImage *image = [self imageWithImage:[UIImage imageNamed:@"background.png"] scaledToWidth:self.view.frame.size.width];
+    [loginview.signUpView.logo sizeToFit];
+    loginview.signUpView.logo.frame = CGRectMake(loginview.signUpView.logo.frame.origin.x, loginview.signUpView.logo.frame.origin.y , 300,  53);
+    UIImage *logoImage = [self imageWithImage: [UIImage imageNamed:@"logo.png"] scaledToWidth:loginview.signUpView.logo.frame.size.width withHeight:loginview.signUpView.logo.frame.size.height] ;
+    UIView *view= [[UIView alloc]initWithFrame:CGRectMake(0, 0, loginview.signUpView.logo.frame.size.width, loginview.signUpView.logo.frame.size.height)];
+    [view setBackgroundColor:[UIColor colorWithPatternImage:logoImage]];
+    loginview.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+  loginview.signUpView.logo = view;
+    
+}
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+{
+    UIAlertView *alert=  [[UIAlertView alloc] initWithTitle:@"Sign Up Successfull"
+                                message:  [NSString stringWithFormat: @"You have just sign up Account with Username: %@", user.username]
+                               delegate:self
+                      cancelButtonTitle:@"Cancel"
+                                         otherButtonTitles:nil];
+    alert.tag = 101;
+    [alert show];
+    
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == [alertView cancelButtonIndex] && alertView.tag == 101) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self presentViewController:logInViewController animated:YES completion:NULL];    }
+    // else do your stuff for the rest of the buttons (firstOtherButtonIndex, secondOtherButtonIndex, etc)
+}
+
+
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
     // Check if both fields are completed
     if (username && password && username.length != 0 && password.length != 0) {
@@ -121,7 +205,7 @@
     [tabBarItem1 setSelectedImage:[UIImage imageNamed:@"Your Item1.png"]];
     [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"Your Item1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Your Item.png"]];
     [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"setting1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"setting.png"]];
-    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"Add1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Add.png"]];
+    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"add1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"add.png"]];
     
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:

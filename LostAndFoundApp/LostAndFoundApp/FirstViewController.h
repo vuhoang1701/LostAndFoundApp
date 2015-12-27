@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
-
-@interface FirstViewController : PFQueryTableViewController <UITableViewDelegate, UITableViewDataSource>
-
+#import "Listener.h"
+@interface FirstViewController : PFQueryTableViewController <UISearchBarDelegate, ListenerDelegate>
+@property (strong, nonatomic) Listener* listener;
+- (IBAction)btnVoice:(id)sender;
 
 @end
 

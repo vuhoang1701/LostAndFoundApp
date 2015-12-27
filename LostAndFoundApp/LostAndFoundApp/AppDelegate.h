@@ -18,5 +18,6 @@
 @property (strong, nonatomic) CLLocation* currentlocation;
 @property (strong,nonatomic) NSArray *listbeacon;
 -(void) EnableExitRange;
+-(void) setbackground: (UIView*) view;
 @end
 

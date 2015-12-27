@@ -14,9 +14,13 @@
 @interface DetailViewController ()<ESTBeaconManagerDelegate>
 @property (nonatomic) ESTBeaconManager *beaconManager;
 @property (nonatomic) CLBeaconRegion *beaconRegion;
+@property (nonatomic)   AppDelegate *delegate;
 @end
 
 @implementation DetailViewController
+{
+    CLLocationCoordinate2D  locationitem;
+}
 
 @synthesize imageItem;
 @synthesize labelDistance;
@@ -25,7 +29,7 @@
 @synthesize labelTime;
 @synthesize item;
 - (void)viewDidLoad {
-    
+    _delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
     [super viewDidLoad];
     [self initDetailItem];
     //Init and set dele for beaconmanager
@@ -35,8 +39,8 @@
                     initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid major:[item.major intValue] minor: [item.minor intValue] identifier:@"regiondetail"];
      [self.beaconManager requestAlwaysAuthorization];
-    self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ibecon.png"]];
-    self.view.backgroundColor = [UIColor clearColor];
+    [_delegate setbackground:self.parentViewController.view];
+       self.view.backgroundColor = [UIColor clearColor];
 
 
     
@@ -67,6 +71,13 @@
     [self.beaconManager stopRangingBeaconsInRegion:self.beaconRegion];
 }
 
+- (void)viewDidUnload
+{
+    [self setImageItem:nil];
+    [self setLabelTime:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
 -(void) initDetailItem
 {
     
@@ -96,15 +107,15 @@
     
     
     ///Set rectangke for mapview with coor of item
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.05;
-    span.longitudeDelta = 0.05;
+   
     // Region struct defines the map to show based on center coordinate and span.
     MKCoordinateRegion region;
-    CLLocationCoordinate2D  locationitem;
     locationitem.latitude = [item.latitude floatValue];
     locationitem.longitude = [item.longitude floatValue];
     region.center = locationitem;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.5;
+    span.longitudeDelta = 0.5;
     region.span = span;
     // Update the map to display the current location.
     [self.mapView setRegion:region animated:YES];
@@ -128,6 +139,7 @@
       // Stop core location services to conserve battery.
     [manager stopUpdatingLocation];
     
+    
 }
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -150,7 +162,7 @@
 - (void) plotResults {
     // Annotate the result.
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    CLLocationCoordinate2D  locationitem;
+    
     locationitem.latitude = [item.latitude floatValue];
     locationitem.longitude = [item.longitude floatValue];
     point.coordinate = locationitem;
@@ -198,13 +210,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void)viewDidUnload
-{
-    [self setImageItem:nil];
-    [self setLabelTime:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -212,6 +218,22 @@
 }
 
 - (IBAction)btnDeleteTap:(id)sender {
+    
+    if ([CLLocationManager locationServicesEnabled] == YES) {
+         [self getallpoint];
+        //AudioServicesPlaySystemSound(1003);
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Location is disable, please enable location service"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+    
 }
 - (IBAction)tapLostSwitch:(id)sender {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -282,8 +304,7 @@
                     
                     [hud hide:YES];
                     [self.NotifySwitch setOn:setting animated:YES];
-                     AppDelegate * delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
-                    [delegate EnableExitRange];
+                    [_delegate EnableExitRange];
                     
                 }
             }];
@@ -293,6 +314,77 @@
     
 }
 
+- (void)getallpoint
+{
+    MKPlacemark *source = [[MKPlacemark   alloc]initWithCoordinate:locationitem   addressDictionary: nil];
+    MKMapItem *srcMapItem = [[MKMapItem alloc]initWithPlacemark:source];
+    [srcMapItem setName:@""];
+    
+    MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:self.currentlocation.coordinate addressDictionary:nil ];
+    
+    MKMapItem *distMapItem = [[MKMapItem alloc]initWithPlacemark:destination];
+    [distMapItem setName:@""];
+    
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc]init];
+    [request setSource:srcMapItem];
+    [request setDestination:distMapItem];
+    [request setTransportType:MKDirectionsTransportTypeWalking];
+    
+    MKDirections *direction = [[MKDirections alloc]initWithRequest:request];
+    
+    [direction calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        
+        NSLog(@"response = %@",response);
+        NSArray *arrRoutes = [response routes];
+        [arrRoutes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            MKRoute *rout = obj;
+            
+            MKPolyline *line = [rout polyline];
+            [self.mapView addOverlay:line];
+            NSLog(@"Rout Name : %@",rout.name);
+            NSLog(@"Total Distance (in Meters) :%f",rout.distance);
+            
+            NSArray *steps = [rout steps];
+            
+            NSLog(@"Total Steps : %d",[steps count]);
+            
+            [steps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                NSLog(@"Rout Instruction : %@",[obj instructions]);
+                NSLog(@"Rout Distance : %f",[obj distance]);
+            }];
+        }];
+    }];
+}
+
+- (void)showDirection
+{
+    CLLocationCoordinate2D *pointsCoordinate = (CLLocationCoordinate2D *)malloc(sizeof(CLLocationCoordinate2D) * 2);
+    pointsCoordinate[0] = locationitem;
+    pointsCoordinate[1] = self.currentlocation.coordinate;
+    
+    
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:pointsCoordinate count:2];
+    free(pointsCoordinate);
+    
+    [self.mapView addOverlay:polyline];
+}
+
+- (MKPolylineRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id)overlay{
+    
+    // create a polylineView using polyline overlay object
+    MKPolylineRenderer *polylineView = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+    
+    // Custom polylineView
+    polylineView.strokeColor =  [UIColor blueColor];
+    polylineView.lineWidth = 2.0;
+    polylineView.alpha = 0.5;
+    
+    return polylineView;
+}
+
+
+ #pragma mark - Beacon
 - (void)beaconManager:(id)manager didEnterRegion:(CLBeaconRegion *)region {
     
     NSLog(@"enter");
@@ -314,6 +406,14 @@
 
 }
 
+-(void) playSound {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"changeTrack" ofType:@"aif"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+    [soundPath release];
+}
+
 - (void)beaconManager:(id)manager didExitRegion:(CLBeaconRegion *)region
 {
     
@@ -321,5 +421,7 @@
     self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undifined"];
     [self.beaconManager startRangingBeaconsInRegion:region];
 }
+
+
 
 @end

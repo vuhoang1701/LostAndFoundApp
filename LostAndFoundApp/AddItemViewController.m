@@ -18,14 +18,14 @@
 
 @property (nonatomic) ESTBeaconManager *beaconManager;
 @property (nonatomic) CLBeaconRegion *beaconRegion;
-
+@property (nonatomic)   AppDelegate *appDelegate;
 @end
 
 @implementation AddItemViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     _appDelegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
     self.labelMajor.text = nil;
     self.labelMinor.text = nil;
     
@@ -36,8 +36,8 @@
     NSUUID *uuid = [[NSUUID alloc]
                     initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"regionAddbeacon"];
-     [self.beaconManager requestAlwaysAuthorization];
-    self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ibecon.png"]];
+    [self.beaconManager requestAlwaysAuthorization];
+    [_appDelegate setbackground:self.parentViewController.view];
     self.view.backgroundColor = [UIColor clearColor];
     self.imageItem.layer.cornerRadius = 5;
     self.imageItem.clipsToBounds = YES;
@@ -275,7 +275,20 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
-
+-(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width
+{
+    float oldWidth = sourceImage.size.width;
+    float scaleFactor = i_width / oldWidth;
+    
+    float newHeight = sourceImage.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 
 

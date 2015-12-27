@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F15BA4F1C1B259C00425023 /* Listener.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15BA431C1B259C00425023 /* Listener.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0F15BA511C1B259C00425023 /* SineWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15BA471C1B259C00425023 /* SineWaveViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0F15BA521C1B259C00425023 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15BA491C1B259C00425023 /* bg.png */; };
+		0F15BA531C1B259C00425023 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15BA4A1C1B259C00425023 /* mic.png */; };
+		0F15BA541C1B259C00425023 /* SineWaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15BA4B1C1B259C00425023 /* SineWaveViewController.xib */; };
+		0F15BA551C1B259C00425023 /* Speex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F15BA4C1C1B259C00425023 /* Speex.framework */; };
+		0F15BA561C1B259C00425023 /* WaveDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15BA4E1C1B259C00425023 /* WaveDisplay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0F278BB51C1290DF00AE0794 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F278BB41C1290DF00AE0794 /* background.png */; };
 		0F318C631BCBB69D005C52D3 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F318C621BCBB69D005C52D3 /* AddItemViewController.m */; };
-		0F3C324E1BCB87E300D6BFA5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C32461BCB87E300D6BFA5 /* Bolts.framework */; };
-		0F3C324F1BCB87E300D6BFA5 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C32471BCB87E300D6BFA5 /* EstimoteSDK.framework */; };
-		0F3C32501BCB87E300D6BFA5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C32481BCB87E300D6BFA5 /* FBSDKCoreKit.framework */; };
-		0F3C32511BCB87E300D6BFA5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C32491BCB87E300D6BFA5 /* FBSDKLoginKit.framework */; };
-		0F3C32521BCB87E300D6BFA5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C324A1BCB87E300D6BFA5 /* FBSDKShareKit.framework */; };
-		0F3C32531BCB87E300D6BFA5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C324B1BCB87E300D6BFA5 /* Parse.framework */; };
-		0F3C32541BCB87E300D6BFA5 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C324C1BCB87E300D6BFA5 /* ParseFacebookUtilsV4.framework */; };
-		0F3C32551BCB87E300D6BFA5 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C324D1BCB87E300D6BFA5 /* ParseUI.framework */; };
 		0F3C325B1BCB890600D6BFA5 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C325A1BCB890600D6BFA5 /* Item.m */; };
-		0F3C32691BCB8AC500D6BFA5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C32681BCB8AC500D6BFA5 /* Bolts.framework */; };
+		0F4CF8861C2E4AAD0010D20F /* Cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4CF8851C2E4AAD0010D20F /* Cloud.png */; };
+		0F4CF8881C2EB1C90010D20F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4CF8871C2EB1C90010D20F /* logo.png */; };
+		0F6F2FEE1C284106009B549F /* Microphone Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6F2FED1C284106009B549F /* Microphone Filled-25.png */; };
+		0F6F2FF01C284520009B549F /* Right 2-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6F2FEF1C284520009B549F /* Right 2-25.png */; };
+		0FAAE49A1C1298060077801B /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FAAE4981C1298060077801B /* images.jpeg */; };
+		0FAAE49B1C1298060077801B /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAAE4991C1298060077801B /* images.png */; };
 		0FCF06871BC596250080F563 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF06861BC596250080F563 /* main.m */; };
 		0FCF068A1BC596250080F563 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF06891BC596250080F563 /* AppDelegate.m */; };
 		0FCF068D1BC596250080F563 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF068C1BC596250080F563 /* FirstViewController.m */; };
@@ -102,19 +107,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F15BA421C1B259C00425023 /* Listener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Listener.h; path = LostAndFoundApp/SpeechToText/Listener.h; sourceTree = "<group>"; };
+		0F15BA431C1B259C00425023 /* Listener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Listener.m; path = LostAndFoundApp/SpeechToText/Listener.m; sourceTree = "<group>"; };
+		0F15BA461C1B259C00425023 /* SineWaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SineWaveViewController.h; path = LostAndFoundApp/SpeechToText/SineWaveViewController.h; sourceTree = "<group>"; };
+		0F15BA471C1B259C00425023 /* SineWaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SineWaveViewController.m; path = LostAndFoundApp/SpeechToText/SineWaveViewController.m; sourceTree = "<group>"; };
+		0F15BA491C1B259C00425023 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		0F15BA4A1C1B259C00425023 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
+		0F15BA4B1C1B259C00425023 /* SineWaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SineWaveViewController.xib; sourceTree = "<group>"; };
+		0F15BA4C1C1B259C00425023 /* Speex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Speex.framework; sourceTree = "<group>"; };
+		0F15BA4D1C1B259C00425023 /* WaveDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveDisplay.h; path = LostAndFoundApp/SpeechToText/WaveDisplay.h; sourceTree = "<group>"; };
+		0F15BA4E1C1B259C00425023 /* WaveDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveDisplay.m; path = LostAndFoundApp/SpeechToText/WaveDisplay.m; sourceTree = "<group>"; };
+		0F15BA581C1B27B700425023 /* AppKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppKey.h; path = LostAndFoundApp/SpeechToText/AppKey.h; sourceTree = "<group>"; };
+		0F278BB41C1290DF00AE0794 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		0F318C611BCBB69D005C52D3 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemViewController.h; path = ../AddItemViewController.h; sourceTree = "<group>"; };
 		0F318C621BCBB69D005C52D3 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemViewController.m; path = ../AddItemViewController.m; sourceTree = "<group>"; };
-		0F3C32461BCB87E300D6BFA5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Library/Lib/Bolts.framework; sourceTree = "<group>"; };
-		0F3C32471BCB87E300D6BFA5 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = ../../Library/Lib/EstimoteSDK.framework; sourceTree = "<group>"; };
-		0F3C32481BCB87E300D6BFA5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Library/Lib/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		0F3C32491BCB87E300D6BFA5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Library/Lib/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		0F3C324A1BCB87E300D6BFA5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Library/Lib/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		0F3C324B1BCB87E300D6BFA5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Library/Lib/Parse.framework; sourceTree = "<group>"; };
-		0F3C324C1BCB87E300D6BFA5 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = ../../Library/Lib/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		0F3C324D1BCB87E300D6BFA5 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../../Library/Lib/ParseUI.framework; sourceTree = "<group>"; };
 		0F3C32591BCB890600D6BFA5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		0F3C325A1BCB890600D6BFA5 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		0F3C32681BCB8AC500D6BFA5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Library/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		0F4CF8851C2E4AAD0010D20F /* Cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cloud.png; path = Image/Cloud.png; sourceTree = "<group>"; };
+		0F4CF8871C2EB1C90010D20F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Image/logo.png; sourceTree = "<group>"; };
+		0F6F2FED1C284106009B549F /* Microphone Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Microphone Filled-25.png"; path = "Image/Microphone Filled-25.png"; sourceTree = "<group>"; };
+		0F6F2FEF1C284520009B549F /* Right 2-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Right 2-25.png"; path = "Image/Right 2-25.png"; sourceTree = "<group>"; };
+		0FAAE4981C1298060077801B /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
+		0FAAE4991C1298060077801B /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
 		0FCF06821BC596250080F563 /* LostAndFoundApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAndFoundApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCF06861BC596250080F563 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FCF06881BC596250080F563 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,18 +223,10 @@
 				0FF222ED1C11CC2D00FD3D9F /* ParseCrashReporting.framework in Frameworks */,
 				0FF222F81C11CC4A00FD3D9F /* Bolts.framework in Frameworks */,
 				0FD3E80D1BD5E69500D73406 /* UIKit.framework in Frameworks */,
+				0F15BA551C1B259C00425023 /* Speex.framework in Frameworks */,
 				0FD3E80B1BD5E68B00D73406 /* Foundation.framework in Frameworks */,
-				0F3C32691BCB8AC500D6BFA5 /* Bolts.framework in Frameworks */,
 				0FF222FA1C11CC4A00FD3D9F /* FBAudienceNetwork.framework in Frameworks */,
-				0F3C324E1BCB87E300D6BFA5 /* Bolts.framework in Frameworks */,
-				0F3C324F1BCB87E300D6BFA5 /* EstimoteSDK.framework in Frameworks */,
-				0F3C32501BCB87E300D6BFA5 /* FBSDKCoreKit.framework in Frameworks */,
-				0F3C32511BCB87E300D6BFA5 /* FBSDKLoginKit.framework in Frameworks */,
-				0F3C32521BCB87E300D6BFA5 /* FBSDKShareKit.framework in Frameworks */,
 				0FF222EC1C11CC2D00FD3D9F /* Parse.framework in Frameworks */,
-				0F3C32531BCB87E300D6BFA5 /* Parse.framework in Frameworks */,
-				0F3C32541BCB87E300D6BFA5 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				0F3C32551BCB87E300D6BFA5 /* ParseUI.framework in Frameworks */,
 				0FF222EE1C11CC2D00FD3D9F /* ParseFacebookUtilsV4.framework in Frameworks */,
 				0FCF06E21BC599060080F563 /* libsqlite3.0.tbd in Frameworks */,
 				0FCF06E31BC599060080F563 /* libsqlite3.tbd in Frameworks */,
@@ -259,14 +265,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F15BA481C1B259C00425023 /* SpeechToText */ = {
+			isa = PBXGroup;
+			children = (
+				0F15BA491C1B259C00425023 /* bg.png */,
+				0F15BA4A1C1B259C00425023 /* mic.png */,
+				0F15BA4B1C1B259C00425023 /* SineWaveViewController.xib */,
+				0F15BA4C1C1B259C00425023 /* Speex.framework */,
+			);
+			name = SpeechToText;
+			path = LostAndFoundApp/SpeechToText/SpeechToText;
+			sourceTree = "<group>";
+		};
+		0F15BA571C1B25AD00425023 /* SpeedToText */ = {
+			isa = PBXGroup;
+			children = (
+				0F15BA581C1B27B700425023 /* AppKey.h */,
+				0F15BA421C1B259C00425023 /* Listener.h */,
+				0F15BA431C1B259C00425023 /* Listener.m */,
+				0F15BA461C1B259C00425023 /* SineWaveViewController.h */,
+				0F15BA471C1B259C00425023 /* SineWaveViewController.m */,
+				0F15BA481C1B259C00425023 /* SpeechToText */,
+				0F15BA4D1C1B259C00425023 /* WaveDisplay.h */,
+				0F15BA4E1C1B259C00425023 /* WaveDisplay.m */,
+			);
+			name = SpeedToText;
+			sourceTree = "<group>";
+		};
 		0FCF06791BC596250080F563 = {
 			isa = PBXGroup;
 			children = (
+				0FCF06841BC596250080F563 /* LostAndFoundApp */,
+				0F15BA571C1B25AD00425023 /* SpeedToText */,
 				0FD3E81B1BD5E76E00D73406 /* Images */,
 				0FD074BA1BD894B600CB5F7B /* Framework */,
-				0FCF06E01BC599060080F563 /* libsqlite3.0.tbd */,
-				0FCF06E11BC599060080F563 /* libsqlite3.tbd */,
-				0FCF06841BC596250080F563 /* LostAndFoundApp */,
 				0FCF06A11BC596250080F563 /* LostAndFoundAppTests */,
 				0FCF06AC1BC596250080F563 /* LostAndFoundAppUITests */,
 				0FCF06831BC596250080F563 /* Products */,
@@ -286,38 +318,16 @@
 		0FCF06841BC596250080F563 /* LostAndFoundApp */ = {
 			isa = PBXGroup;
 			children = (
-				0FD403541BDF515500E3180D /* BeaconID.h */,
-				0FD403551BDF515500E3180D /* BeaconID.m */,
-				0FD403561BDF515500E3180D /* BeaconNotificationsManager.h */,
-				0FD403571BDF515500E3180D /* BeaconNotificationsManager.m */,
-				0FD3E8291BD5E8C400D73406 /* MBProgress */,
-				0FCF06CB1BC596990080F563 /* EstimoteSDK */,
-				0FCF06C71BC596590080F563 /* FacebookSDK */,
-				0FCF06C81BC596760080F563 /* ParseSDK */,
+				0FFE4E4C1C2FE70000113C45 /* Controller */,
+				0FFE4E4A1C2FE6CE00113C45 /* Model */,
+				0FFE4E481C2FE66C00113C45 /* ThirdParty */,
 				0FCF06881BC596250080F563 /* AppDelegate.h */,
 				0FCF06891BC596250080F563 /* AppDelegate.m */,
-				0FD3E81A1BD5E75F00D73406 /* NSDateFramework */,
-				0FD3E82D1BD6106500D73406 /* LoginViewController.h */,
-				0FD3E82E1BD6106500D73406 /* LoginViewController.m */,
-				0F318C621BCBB69D005C52D3 /* AddItemViewController.m */,
-				0F318C611BCBB69D005C52D3 /* AddItemViewController.h */,
-				0FCF068B1BC596250080F563 /* FirstViewController.h */,
-				0FCF068C1BC596250080F563 /* FirstViewController.m */,
-				0FCF068E1BC596250080F563 /* SecondViewController.h */,
-				0FCF068F1BC596250080F563 /* SecondViewController.m */,
-				0F3C325A1BCB890600D6BFA5 /* Item.m */,
-				0F3C32591BCB890600D6BFA5 /* Item.h */,
 				0FCF06911BC596250080F563 /* Main.storyboard */,
 				0FCF06941BC596250080F563 /* Assets.xcassets */,
 				0FCF06961BC596250080F563 /* LaunchScreen.storyboard */,
 				0FCF06991BC596250080F563 /* Info.plist */,
-				0FCF06E81BC5FCB00080F563 /* DetailViewController.h */,
-				0FCF06E91BC5FCB00080F563 /* DetailViewController.m */,
 				0FCF06851BC596250080F563 /* Supporting Files */,
-				0FD4039B1BE1CCF600E3180D /* SettingTableViewController.h */,
-				0FD4039C1BE1CCF600E3180D /* SettingTableViewController.m */,
-				0FD4039E1BE1DBA500E3180D /* UserTableViewController.h */,
-				0FD4039F1BE1DBA500E3180D /* UserTableViewController.m */,
 			);
 			path = LostAndFoundApp;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 				0FF222F71C11CC4A00FD3D9F /* FBSDKShareKit.framework */,
 			);
 			name = FacebookSDK;
+			path = LostAndFoundApp;
 			sourceTree = "<group>";
 		};
 		0FCF06C81BC596760080F563 /* ParseSDK */ = {
@@ -373,6 +384,7 @@
 				0FF222EA1C11CC2D00FD3D9F /* ParseUI.framework */,
 			);
 			name = ParseSDK;
+			path = LostAndFoundApp;
 			sourceTree = "<group>";
 		};
 		0FCF06CB1BC596990080F563 /* EstimoteSDK */ = {
@@ -381,11 +393,17 @@
 				0FCF06C91BC596950080F563 /* EstimoteSDK.framework */,
 			);
 			name = EstimoteSDK;
+			path = LostAndFoundApp;
 			sourceTree = "<group>";
 		};
 		0FD074BA1BD894B600CB5F7B /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				0FCF06CB1BC596990080F563 /* EstimoteSDK */,
+				0FCF06C71BC596590080F563 /* FacebookSDK */,
+				0FCF06C81BC596760080F563 /* ParseSDK */,
+				0FCF06E01BC599060080F563 /* libsqlite3.0.tbd */,
+				0FCF06E11BC599060080F563 /* libsqlite3.tbd */,
 				0FCF06DE1BC597ED0080F563 /* SystemConfiguration.framework */,
 				0FCF06DC1BC597E20080F563 /* StoreKit.framework */,
 				0FCF06DA1BC597DB0080F563 /* Social.framework */,
@@ -398,15 +416,6 @@
 				0FCF06CC1BC5979D0080F563 /* Accounts.framework */,
 				0FD3E80C1BD5E69500D73406 /* UIKit.framework */,
 				0FD3E80A1BD5E68B00D73406 /* Foundation.framework */,
-				0F3C32681BCB8AC500D6BFA5 /* Bolts.framework */,
-				0F3C32461BCB87E300D6BFA5 /* Bolts.framework */,
-				0F3C32471BCB87E300D6BFA5 /* EstimoteSDK.framework */,
-				0F3C32481BCB87E300D6BFA5 /* FBSDKCoreKit.framework */,
-				0F3C32491BCB87E300D6BFA5 /* FBSDKLoginKit.framework */,
-				0F3C324A1BCB87E300D6BFA5 /* FBSDKShareKit.framework */,
-				0F3C324B1BCB87E300D6BFA5 /* Parse.framework */,
-				0F3C324C1BCB87E300D6BFA5 /* ParseFacebookUtilsV4.framework */,
-				0F3C324D1BCB87E300D6BFA5 /* ParseUI.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -424,6 +433,13 @@
 		0FD3E81B1BD5E76E00D73406 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0F4CF8871C2EB1C90010D20F /* logo.png */,
+				0F4CF8851C2E4AAD0010D20F /* Cloud.png */,
+				0F6F2FEF1C284520009B549F /* Right 2-25.png */,
+				0F6F2FED1C284106009B549F /* Microphone Filled-25.png */,
+				0FAAE4981C1298060077801B /* images.jpeg */,
+				0FAAE4991C1298060077801B /* images.png */,
+				0F278BB41C1290DF00AE0794 /* background.png */,
 				0FF222D71C11CB0A00FD3D9F /* add.png */,
 				0FF222D81C11CB0A00FD3D9F /* add1.png */,
 				0FF222D91C11CB0A00FD3D9F /* icon.png */,
@@ -454,6 +470,57 @@
 				0FD3E8271BD5E8BE00D73406 /* MBProgressHUD.m */,
 			);
 			name = MBProgress;
+			sourceTree = "<group>";
+		};
+		0FFE4E481C2FE66C00113C45 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				0FD3E81A1BD5E75F00D73406 /* NSDateFramework */,
+				0FD3E8291BD5E8C400D73406 /* MBProgress */,
+				0FFE4E491C2FE68500113C45 /* BeaconManager */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		0FFE4E491C2FE68500113C45 /* BeaconManager */ = {
+			isa = PBXGroup;
+			children = (
+				0FD403541BDF515500E3180D /* BeaconID.h */,
+				0FD403551BDF515500E3180D /* BeaconID.m */,
+				0FD403561BDF515500E3180D /* BeaconNotificationsManager.h */,
+				0FD403571BDF515500E3180D /* BeaconNotificationsManager.m */,
+			);
+			name = BeaconManager;
+			sourceTree = "<group>";
+		};
+		0FFE4E4A1C2FE6CE00113C45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F3C325A1BCB890600D6BFA5 /* Item.m */,
+				0F3C32591BCB890600D6BFA5 /* Item.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0FFE4E4C1C2FE70000113C45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FD3E82D1BD6106500D73406 /* LoginViewController.h */,
+				0FD3E82E1BD6106500D73406 /* LoginViewController.m */,
+				0F318C621BCBB69D005C52D3 /* AddItemViewController.m */,
+				0F318C611BCBB69D005C52D3 /* AddItemViewController.h */,
+				0FCF068B1BC596250080F563 /* FirstViewController.h */,
+				0FCF068C1BC596250080F563 /* FirstViewController.m */,
+				0FCF068E1BC596250080F563 /* SecondViewController.h */,
+				0FCF068F1BC596250080F563 /* SecondViewController.m */,
+				0FD4039B1BE1CCF600E3180D /* SettingTableViewController.h */,
+				0FD4039C1BE1CCF600E3180D /* SettingTableViewController.m */,
+				0FD4039E1BE1DBA500E3180D /* UserTableViewController.h */,
+				0FD4039F1BE1DBA500E3180D /* UserTableViewController.m */,
+				0FCF06E81BC5FCB00080F563 /* DetailViewController.h */,
+				0FCF06E91BC5FCB00080F563 /* DetailViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,11 +630,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF222E01C11CB0A00FD3D9F /* icon.png in Resources */,
+				0F6F2FEE1C284106009B549F /* Microphone Filled-25.png in Resources */,
+				0F4CF8881C2EB1C90010D20F /* logo.png in Resources */,
+				0FAAE49A1C1298060077801B /* images.jpeg in Resources */,
+				0F278BB51C1290DF00AE0794 /* background.png in Resources */,
+				0FAAE49B1C1298060077801B /* images.png in Resources */,
 				0FD4034A1BDE807800E3180D /* cell_middle.png in Resources */,
 				0FD4034B1BDE807800E3180D /* cell_top_tile.png in Resources */,
 				0FD403431BDE129700E3180D /* logout-button-blue-hi.png in Resources */,
 				0FF222DE1C11CB0A00FD3D9F /* add.png in Resources */,
 				0FF222F91C11CC4A00FD3D9F /* FacebookSDKStrings.bundle in Resources */,
+				0F6F2FF01C284520009B549F /* Right 2-25.png in Resources */,
 				0FD074B91BD8862900CB5F7B /* fb 1.png in Resources */,
 				0FF222E21C11CB0A00FD3D9F /* setting1.png in Resources */,
 				0FD074B11BD82E6000CB5F7B /* 117990-matte-blue-and-white-square-icon-social-media-logos-facebook-logo.png in Resources */,
@@ -576,9 +649,13 @@
 				0FCF06981BC596250080F563 /* LaunchScreen.storyboard in Resources */,
 				0FF222E31C11CB0A00FD3D9F /* Your Item.png in Resources */,
 				0FD403491BDE807800E3180D /* cell_bottom.png in Resources */,
+				0F4CF8861C2E4AAD0010D20F /* Cloud.png in Resources */,
+				0F15BA541C1B259C00425023 /* SineWaveViewController.xib in Resources */,
 				0FF222E41C11CB0A00FD3D9F /* Your Item1.png in Resources */,
 				0FF222E11C11CB0A00FD3D9F /* setting.png in Resources */,
+				0F15BA531C1B259C00425023 /* mic.png in Resources */,
 				0FCF06951BC596250080F563 /* Assets.xcassets in Resources */,
+				0F15BA521C1B259C00425023 /* bg.png in Resources */,
 				0FF222DF1C11CB0A00FD3D9F /* add1.png in Resources */,
 				0FD4034D1BDE807800E3180D /* common_bg.png in Resources */,
 				0FCF06931BC596250080F563 /* Main.storyboard in Resources */,
@@ -611,6 +688,7 @@
 			files = (
 				0FD403581BDF515500E3180D /* BeaconID.m in Sources */,
 				0F318C631BCBB69D005C52D3 /* AddItemViewController.m in Sources */,
+				0F15BA561C1B259C00425023 /* WaveDisplay.m in Sources */,
 				0FD4039D1BE1CCF600E3180D /* SettingTableViewController.m in Sources */,
 				0FD403A01BE1DBA500E3180D /* UserTableViewController.m in Sources */,
 				0FCF06EA1BC5FCB00080F563 /* DetailViewController.m in Sources */,
@@ -618,10 +696,12 @@
 				0FD3E82F1BD6106500D73406 /* LoginViewController.m in Sources */,
 				0FF222D61C11C9CB00FD3D9F /* NSDate+NVTimeAgo.m in Sources */,
 				0FD3E8281BD5E8BE00D73406 /* MBProgressHUD.m in Sources */,
+				0F15BA511C1B259C00425023 /* SineWaveViewController.m in Sources */,
 				0FCF068A1BC596250080F563 /* AppDelegate.m in Sources */,
 				0FD403591BDF515500E3180D /* BeaconNotificationsManager.m in Sources */,
 				0FCF068D1BC596250080F563 /* FirstViewController.m in Sources */,
 				0F3C325B1BCB890600D6BFA5 /* Item.m in Sources */,
+				0F15BA4F1C1B259C00425023 /* Listener.m in Sources */,
 				0FCF06871BC596250080F563 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,10 +843,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/LostAndFoundApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/LostAndFoundApp",
+					"$(PROJECT_DIR)/LostAndFoundApp/SpeechToText/SpeechToText",
+				);
 				INFOPLIST_FILE = LostAndFoundApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -781,10 +865,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/LostAndFoundApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/LostAndFoundApp",
+					"$(PROJECT_DIR)/LostAndFoundApp/SpeechToText/SpeechToText",
+				);
 				INFOPLIST_FILE = LostAndFoundApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

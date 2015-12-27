@@ -15,7 +15,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 @interface SecondViewController ()
-
+@property (nonatomic)   AppDelegate *delegate;
 @end
 
 @implementation SecondViewController
@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
     PFUser*user = [PFUser currentUser];
     PFFile *thumbnail = [user objectForKey:@"profile_picture"];
     self.imageUser.image = [UIImage imageNamed:@"images.jpeg"];
@@ -47,8 +48,7 @@
 
     }
        self.lbelEmail.text = [NSString stringWithFormat:@"Email : %@", [user objectForKey:@"email"]];
-    
-    self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ibecon.png"]];
+    [_delegate setbackground:self.parentViewController.view];
     self.view.backgroundColor = [UIColor clearColor];
  
 
@@ -68,8 +68,21 @@
     
     UINavigationController *naviSignin =  [[UINavigationController alloc] initWithRootViewController:signinView];
     
-    AppDelegate * delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
-    delegate.window.rootViewController = naviSignin;
+    _delegate.window.rootViewController = naviSignin;
 
+}
+-(UIImage*)imageWithImage: (UIImage*) sourceImage scaledToWidth: (float) i_width
+{
+    float oldWidth = sourceImage.size.width;
+    float scaleFactor = i_width / oldWidth;
+    
+    float newHeight = sourceImage.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 @end
