@@ -21,6 +21,8 @@
 		0F4CF8881C2EB1C90010D20F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4CF8871C2EB1C90010D20F /* logo.png */; };
 		0F6F2FEE1C284106009B549F /* Microphone Filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6F2FED1C284106009B549F /* Microphone Filled-25.png */; };
 		0F6F2FF01C284520009B549F /* Right 2-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6F2FEF1C284520009B549F /* Right 2-25.png */; };
+		0F8F0E811C318174006774B8 /* peep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F8F0E801C318174006774B8 /* peep.wav */; };
+		0F8F0E831C3184B4006774B8 /* drum01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0F8F0E821C3184B4006774B8 /* drum01.mp3 */; };
 		0FAAE49A1C1298060077801B /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FAAE4981C1298060077801B /* images.jpeg */; };
 		0FAAE49B1C1298060077801B /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FAAE4991C1298060077801B /* images.png */; };
 		0FCF06871BC596250080F563 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCF06861BC596250080F563 /* main.m */; };
@@ -127,6 +129,8 @@
 		0F4CF8871C2EB1C90010D20F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Image/logo.png; sourceTree = "<group>"; };
 		0F6F2FED1C284106009B549F /* Microphone Filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Microphone Filled-25.png"; path = "Image/Microphone Filled-25.png"; sourceTree = "<group>"; };
 		0F6F2FEF1C284520009B549F /* Right 2-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Right 2-25.png"; path = "Image/Right 2-25.png"; sourceTree = "<group>"; };
+		0F8F0E801C318174006774B8 /* peep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peep.wav; sourceTree = "<group>"; };
+		0F8F0E821C3184B4006774B8 /* drum01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drum01.mp3; sourceTree = "<group>"; };
 		0FAAE4981C1298060077801B /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		0FAAE4991C1298060077801B /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images.png; sourceTree = "<group>"; };
 		0FCF06821BC596250080F563 /* LostAndFoundApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAndFoundApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,9 +296,19 @@
 			name = SpeedToText;
 			sourceTree = "<group>";
 		};
+		0F8F0E7D1C3177B9006774B8 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F0E821C3184B4006774B8 /* drum01.mp3 */,
+				0F8F0E801C318174006774B8 /* peep.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		0FCF06791BC596250080F563 = {
 			isa = PBXGroup;
 			children = (
+				0F8F0E7D1C3177B9006774B8 /* Sound */,
 				0FCF06841BC596250080F563 /* LostAndFoundApp */,
 				0F15BA571C1B25AD00425023 /* SpeedToText */,
 				0FD3E81B1BD5E76E00D73406 /* Images */,
@@ -654,6 +668,7 @@
 				0FF222E41C11CB0A00FD3D9F /* Your Item1.png in Resources */,
 				0FF222E11C11CB0A00FD3D9F /* setting.png in Resources */,
 				0F15BA531C1B259C00425023 /* mic.png in Resources */,
+				0F8F0E831C3184B4006774B8 /* drum01.mp3 in Resources */,
 				0FCF06951BC596250080F563 /* Assets.xcassets in Resources */,
 				0F15BA521C1B259C00425023 /* bg.png in Resources */,
 				0FF222DF1C11CB0A00FD3D9F /* add1.png in Resources */,
@@ -661,6 +676,7 @@
 				0FCF06931BC596250080F563 /* Main.storyboard in Resources */,
 				0FD074AF1BD824F600CB5F7B /* FaceBook-icon.png in Resources */,
 				0FD4034F1BDF259300E3180D /* ibeacon2.jpeg in Resources */,
+				0F8F0E811C318174006774B8 /* peep.wav in Resources */,
 				0FD074B31BD8837100CB5F7B /* facebook-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,7 +868,7 @@
 					"$(PROJECT_DIR)/LostAndFoundApp/SpeechToText/SpeechToText",
 				);
 				INFOPLIST_FILE = LostAndFoundApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HoangVu.LostAndFoundApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -874,7 +890,7 @@
 					"$(PROJECT_DIR)/LostAndFoundApp/SpeechToText/SpeechToText",
 				);
 				INFOPLIST_FILE = LostAndFoundApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HoangVu.LostAndFoundApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

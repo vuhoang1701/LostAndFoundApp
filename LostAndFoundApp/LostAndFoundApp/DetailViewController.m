@@ -11,6 +11,7 @@
 #import "MBProgressHUD.h"
 #import <EstimoteSDK/EstimoteSDK.h>
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 @interface DetailViewController ()<ESTBeaconManagerDelegate>
 @property (nonatomic) ESTBeaconManager *beaconManager;
 @property (nonatomic) CLBeaconRegion *beaconRegion;
@@ -20,6 +21,10 @@
 @implementation DetailViewController
 {
     CLLocationCoordinate2D  locationitem;
+    AVAudioPlayer *_audioPlayer;
+    NSTimer* timerPlay;
+    BOOL isPlay;
+
 }
 
 @synthesize imageItem;
@@ -29,6 +34,7 @@
 @synthesize labelTime;
 @synthesize item;
 - (void)viewDidLoad {
+    isPlay = false;
     _delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
     [super viewDidLoad];
     [self initDetailItem];
@@ -42,23 +48,13 @@
     [_delegate setbackground:self.parentViewController.view];
        self.view.backgroundColor = [UIColor clearColor];
 
-
+    isPlay =  false;
+    // Construct URL to sound file
+    NSString *path = [NSString stringWithFormat:@"%@/peep.wav", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
     
- 
-//    UIImage *btnImage = [UIImage imageNamed:@"Delete_Icon.png"];
-//    [self.btnDeleteItem setImage:btnImage forState:UIControlStateNormal];
-//    UIImage *buttonImage = [UIImage imageNamed:@"back-icon.png"];
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [button setImage:buttonImage forState:UIControlStateNormal];
-//    button.frame = CGRectMake(0, 0, 29, 29);
-//    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    self.navigationItem.leftBarButtonItem = customBarItem;
-    
-
-
-
-    // Do any additional setup after loading the view.
+    // Create audio player object and initialize with URL to sound
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,12 +65,14 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.beaconManager stopRangingBeaconsInRegion:self.beaconRegion];
+     [self stopLoop];
 }
 
 - (void)viewDidUnload
 {
     [self setImageItem:nil];
     [self setLabelTime:nil];
+    [self stopLoop];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -396,6 +394,17 @@
     {
         CLBeacon *nearestBeacon = beacons.firstObject;
         if (nearestBeacon!= nil && nearestBeacon.accuracy != -1) {
+             if(nearestBeacon.accuracy <= 20)
+             {
+                 float range = 1 - (nearestBeacon.accuracy/20);
+                 [_audioPlayer setVolume: 1.0];
+             }
+            if(isPlay== false && nearestBeacon.accuracy <= 20)
+            {
+            
+                [self loopSound];
+                isPlay = true;
+            }
             
             self.labelStatus.text = [NSString stringWithFormat:@"Status: In beacon Region"];
             self.labelDistance.text = [NSString stringWithFormat:@"Distance: ~%2.1f m", nearestBeacon.accuracy  ];
@@ -403,20 +412,43 @@
         }
  
     }
+    else
+    {
+        self.labelStatus.text = [NSString stringWithFormat:@"Status: In beacon Region"];
+        self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undifined"];
+        [self stopLoop];
+    }
+        
 
+}
+-(void) loopSound
+{
+    timerPlay = [NSTimer scheduledTimerWithTimeInterval:(1.0)
+                                                 target:self
+                                               selector:@selector(playSound)
+                                               userInfo:nil
+                                                repeats:YES];
+}
+
+-(void) stopLoop
+{
+    [timerPlay invalidate];
+    timerPlay = nil;
+    isPlay = false;
 }
 
 -(void) playSound {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"changeTrack" ofType:@"aif"];
-    SystemSoundID soundID;
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-    AudioServicesPlaySystemSound (soundID);
-    [soundPath release];
+    if(_LostSwitch.isOn == YES)
+    {
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+        [_audioPlayer play];
+    }
 }
 
 - (void)beaconManager:(id)manager didExitRegion:(CLBeaconRegion *)region
 {
-    
+    [self stopLoop];
+    [_audioPlayer play];
     self.labelStatus.text = [NSString stringWithFormat:@"Status: Out beacon region"];
     self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undifined"];
     [self.beaconManager startRangingBeaconsInRegion:region];
