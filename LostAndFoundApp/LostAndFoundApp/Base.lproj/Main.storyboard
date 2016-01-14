@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dXW-FM-kvs">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -566,12 +565,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Fa-yzW">
                                 <rect key="frame" x="88" y="461" width="255" height="58"/>
-                                <state key="normal" image="BD9241AA-4EFB-4C9A-99C2-7252C6ED536F"/>
+                                <state key="normal" image="BAC44821-3916-44F4-A77D-A74EF48C8DA8"/>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="push" identifier="ShowTabbarView" id="PJ4-Gw-BlD"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0FE273B3-6AF7-4F71-A607-F8C78EE02656" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-2t-BaU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0384FF30-C998-4389-AAC6-3DCF5C0A09DD" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-2t-BaU">
                                 <rect key="frame" x="114" y="81" width="203" height="204"/>
                             </imageView>
                         </subviews>
@@ -584,11 +583,11 @@
             </objects>
             <point key="canvasLocation" x="538" y="-855"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Your Item-->
         <scene sceneID="mVx-Br-Hxg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pf4-xI-wSG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Your Item" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQl-hs-u7O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -620,7 +619,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMR-dV-6sz">
-                                <rect key="frame" x="106" y="146" width="0.0" height="24"/>
+                                <rect key="frame" x="128.5" y="146" width="0.0" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="v8J-Kn-5QP"/>
                                 </constraints>
@@ -629,7 +628,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kY-m1-evM">
-                                <rect key="frame" x="103" y="120" width="0.0" height="21"/>
+                                <rect key="frame" x="125.5" y="120" width="0.0" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rdE-Fb-8u1"/>
                                 </constraints>
@@ -655,12 +654,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ff5-55-j4W">
-                                <rect key="frame" x="125" y="175" width="12" height="22"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ff5-55-j4W">
+                                <rect key="frame" x="125" y="168" width="25" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="130" id="u9W-3b-nWf"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -684,7 +682,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkh-EA-lwW">
                                 <rect key="frame" x="361" y="192" width="48" height="30"/>
-                                <state key="normal" title="Library"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="tapselectImage:" destination="uzl-br-ly4" eventType="touchUpInside" id="LbU-d5-Ow0"/>
                                 </connections>
@@ -693,21 +693,24 @@
                                 <rect key="frame" x="20" y="317" width="374" height="340"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.png" translatesAutoresizingMaskIntoConstraints="NO" id="kEX-fW-bLS">
-                                        <rect key="frame" x="10" y="0.0" width="354" height="340"/>
+                                        <rect key="frame" x="87" y="74" width="200" height="192"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="2gT-oe-zPD"/>
+                                            <constraint firstAttribute="width" secondItem="kEX-fW-bLS" secondAttribute="height" multiplier="177:170" id="Wbp-oO-7ww"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="kEX-fW-bLS" secondAttribute="trailing" constant="10" id="3mx-BE-yuV"/>
-                                    <constraint firstAttribute="bottom" secondItem="kEX-fW-bLS" secondAttribute="bottom" id="H1I-Z0-b1l"/>
-                                    <constraint firstItem="kEX-fW-bLS" firstAttribute="top" secondItem="IOe-dw-n6B" secondAttribute="top" id="hGp-Mq-xFW"/>
-                                    <constraint firstItem="kEX-fW-bLS" firstAttribute="leading" secondItem="IOe-dw-n6B" secondAttribute="leading" constant="10" id="tzd-7N-mhA"/>
+                                    <constraint firstItem="kEX-fW-bLS" firstAttribute="centerX" secondItem="IOe-dw-n6B" secondAttribute="centerX" id="Bah-Mn-lWT"/>
+                                    <constraint firstItem="kEX-fW-bLS" firstAttribute="centerY" secondItem="IOe-dw-n6B" secondAttribute="centerY" id="mPC-ef-PCV"/>
                                     <constraint firstAttribute="width" secondItem="IOe-dw-n6B" secondAttribute="height" multiplier="11:10" id="uf0-bV-QkR"/>
-                                    <constraint firstItem="kEX-fW-bLS" firstAttribute="centerX" secondItem="IOe-dw-n6B" secondAttribute="centerX" id="zXB-im-dK1"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgX-xj-GHE">
                                 <rect key="frame" x="296" y="192" width="55" height="30"/>
-                                <state key="normal" title="Capture"/>
+                                <state key="normal" title="Capture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="tapLoadImage:" destination="uzl-br-ly4" eventType="touchUpInside" id="aQH-gR-qUM"/>
                                 </connections>
@@ -723,17 +726,17 @@
                             <constraint firstItem="xM7-EK-2ns" firstAttribute="top" secondItem="IOe-dw-n6B" secondAttribute="bottom" constant="30" id="Eyl-Fc-FkR"/>
                             <constraint firstItem="f7j-Tk-hUm" firstAttribute="top" secondItem="Alx-q7-sdo" secondAttribute="bottom" constant="56" id="H8m-kc-FW0"/>
                             <constraint firstItem="lFF-Hi-KfS" firstAttribute="top" secondItem="ed2-FT-KoA" secondAttribute="bottom" constant="15" id="JnU-eY-Zl8"/>
-                            <constraint firstItem="7kY-m1-evM" firstAttribute="leading" secondItem="f7j-Tk-hUm" secondAttribute="trailing" constant="43" id="OQH-Eq-8xk"/>
+                            <constraint firstItem="7kY-m1-evM" firstAttribute="leading" secondItem="f7j-Tk-hUm" secondAttribute="trailing" constant="65" id="OQH-Eq-8xk"/>
                             <constraint firstItem="7kY-m1-evM" firstAttribute="top" secondItem="ed2-FT-KoA" secondAttribute="bottom" constant="8" id="Oub-Mb-RFq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xkh-EA-lwW" secondAttribute="trailing" constant="-15" id="TSI-or-7tn"/>
                             <constraint firstItem="Jg6-Bq-Oab" firstAttribute="leading" secondItem="yFw-Ti-e0V" secondAttribute="leadingMargin" id="VeY-E4-uMX"/>
                             <constraint firstItem="ed2-FT-KoA" firstAttribute="top" secondItem="Alx-q7-sdo" secondAttribute="bottom" id="X9D-me-Aa4"/>
                             <constraint firstItem="f7j-Tk-hUm" firstAttribute="leading" secondItem="yFw-Ti-e0V" secondAttribute="leadingMargin" id="XaT-fG-YJy"/>
                             <constraint firstItem="QHd-qi-R9Q" firstAttribute="top" secondItem="Jg6-Bq-Oab" secondAttribute="bottom" constant="10" id="diO-zE-2D8"/>
-                            <constraint firstItem="ff5-55-j4W" firstAttribute="top" secondItem="gMR-dV-6sz" secondAttribute="bottom" constant="5" id="eWY-OV-Z1d"/>
+                            <constraint firstItem="ff5-55-j4W" firstAttribute="top" secondItem="gMR-dV-6sz" secondAttribute="bottom" constant="-2" id="eWY-OV-Z1d"/>
                             <constraint firstItem="ff5-55-j4W" firstAttribute="leading" secondItem="yFw-Ti-e0V" secondAttribute="leadingMargin" constant="105" id="ew5-U0-xmg"/>
                             <constraint firstItem="IOe-dw-n6B" firstAttribute="centerX" secondItem="yFw-Ti-e0V" secondAttribute="centerX" id="idq-5k-trQ"/>
-                            <constraint firstItem="gMR-dV-6sz" firstAttribute="leading" secondItem="Jg6-Bq-Oab" secondAttribute="trailing" constant="43" id="kwp-ac-3sR"/>
+                            <constraint firstItem="gMR-dV-6sz" firstAttribute="leading" secondItem="Jg6-Bq-Oab" secondAttribute="trailing" constant="65" id="kwp-ac-3sR"/>
                             <constraint firstItem="IOe-dw-n6B" firstAttribute="trailing" secondItem="yFw-Ti-e0V" secondAttribute="trailingMargin" id="qgz-Ou-Hds"/>
                             <constraint firstItem="lFF-Hi-KfS" firstAttribute="trailing" secondItem="yFw-Ti-e0V" secondAttribute="trailingMargin" id="rZv-2d-U9L"/>
                             <constraint firstItem="lFF-Hi-KfS" firstAttribute="leading" secondItem="ff5-55-j4W" secondAttribute="trailing" constant="25" id="sOY-au-ItV"/>
@@ -769,11 +772,11 @@
             </objects>
             <point key="canvasLocation" x="424" y="1122"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Setting-->
         <scene sceneID="k2U-CL-6Fk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jNg-hD-evj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Setting" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lav-0c-3GC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -792,11 +795,13 @@
             </objects>
             <point key="canvasLocation" x="548" y="319"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Add Item-->
         <scene sceneID="II2-q8-vvt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iWc-O0-Bka" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="Ahp-WE-HIa"/>
+                    <tabBarItem key="tabBarItem" title="Add Item" id="Ahp-WE-HIa">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Vy-1V-dK9">
@@ -840,7 +845,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0FE273B3-6AF7-4F71-A607-F8C78EE02656" width="256" height="256">
+        <image name="0384FF30-C998-4389-AAC6-3DCF5C0A09DD" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -5281,7 +5286,7 @@ AAQOSAAEDlAABA5TAAQOWAAEDmcABA5rAAQOcgAEDnoABA6HAAQOjAAEDo4ABA6QAAQOlQAEDp0ABA6g
 AAQOpQAEDq0ABA6wAAQOwgAEDsUABA7KAAAAAAAABAEAAAAAAAAAPwAAAAAAAAAAAAAAAAAEDsw
 </mutableData>
         </image>
-        <image name="BD9241AA-4EFB-4C9A-99C2-7252C6ED536F" width="401" height="82">
+        <image name="BAC44821-3916-44F4-A77D-A74EF48C8DA8" width="401" height="82">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

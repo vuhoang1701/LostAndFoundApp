@@ -202,24 +202,38 @@
     tabBarItem1.title = @"";
     tabBarItem2.title = @"";
     tabBarItem3.title = @"";
-    [tabBarItem1 setSelectedImage:[UIImage imageNamed:@"Your Item1.png"]];
-    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"Your Item1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Your Item.png"]];
-    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"setting1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"setting.png"]];
-    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"add1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"add.png"]];
-    
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       UIColorFromRGB(0x00BFFF), UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateNormal];
-
-    UIColor *titleHighlightedColor = UIColorFromRGB(0x00BFFF);
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       titleHighlightedColor, UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateHighlighted];
-    //Set color for tintbar
    
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"Your Item1.png"]
+                        imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"Your Item1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Your Item.png"]];
+    [tabBarItem1 setTitle:@"Your Item"];
+    [tabBarItem1 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         UIColorFromRGB(0x645f5f), UITextAttributeTextColor,
+                                         nil] forState:UIControlStateNormal];
+    [tabBarItem1 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         [UIColor whiteColor], UITextAttributeTextColor,
+                                         nil] forState:UIControlStateHighlighted];
 
+    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"setting1.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"setting.png"]];
+    [tabBarItem2 setTitle:@"Setting"];
+    [tabBarItem2 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         UIColorFromRGB(0x645f5f), UITextAttributeTextColor,
+                                         nil] forState:UIControlStateNormal];
+    [tabBarItem1 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         [UIColor whiteColor], UITextAttributeTextColor,
+                                         nil] forState:UIControlStateHighlighted];
     
+    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"add.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"add1.png"]];
+    [tabBarItem3 setTitle:@"Add Item"];
+    [tabBarItem3 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         UIColorFromRGB(0x645f5f), UITextAttributeTextColor,
+                                         nil] forState:UIControlStateNormal];
+    [tabBarItem3 setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                         [UIColor whiteColor], UITextAttributeTextColor,
+                                         nil] forState:UIControlStateHighlighted];
+   
+    //Set color for tintbar
+    [tabBar setSelectedImageTintColor:[UIColor whiteColor]];
     delegate.window.rootViewController= tabBarController;
   
 }

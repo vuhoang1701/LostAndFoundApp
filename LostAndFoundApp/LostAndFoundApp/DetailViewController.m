@@ -414,8 +414,8 @@
     }
     else
     {
-        self.labelStatus.text = [NSString stringWithFormat:@"Status: In beacon Region"];
-        self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undifined"];
+        self.labelStatus.text = [NSString stringWithFormat:@"Status: Out beacon Region"];
+        self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undefined"];
         [self stopLoop];
     }
         
@@ -450,7 +450,7 @@
     [self stopLoop];
     [_audioPlayer play];
     self.labelStatus.text = [NSString stringWithFormat:@"Status: Out beacon region"];
-    self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undifined"];
+    self.labelDistance.text = [NSString stringWithFormat:@"Distance: Undefined"];
     [self.beaconManager startRangingBeaconsInRegion:region];
 }
 

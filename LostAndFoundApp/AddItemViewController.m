@@ -68,7 +68,7 @@
 - (void) viewDidAppear:(BOOL)animated{
     
     UIImage *image = [UIImage imageNamed:@"images.png"];
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.viewAnimation.frame.size.width, self.viewAnimation.frame.size.height)];
+    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(self.viewAnimation.frame.size.width/2-125, self.viewAnimation.frame.size.height/2 -125, 250,250)];
     imgView.image = image;
     
     CABasicAnimation* animation;
