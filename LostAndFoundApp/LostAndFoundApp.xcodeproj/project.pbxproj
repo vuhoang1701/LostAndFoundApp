@@ -604,7 +604,7 @@
 				TargetAttributes = {
 					0FCF06811BC596250080F563 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 762Q3P5T4T;
+						DevelopmentTeam = J69WASBDSB;
 					};
 					0FCF069D1BC596250080F563 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -790,8 +790,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: vuhoang1701@gmail.com (49F4RU632M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: vuhoang1701@gmail.com (49F4RU632M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -836,8 +836,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: vuhoang1701@gmail.com (49F4RU632M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: vuhoang1701@gmail.com (49F4RU632M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -864,8 +864,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/LostAndFoundApp",
@@ -886,8 +886,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: khicodonanhgoitenem7602@gmail.com (49F4RU632M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/LostAndFoundApp",

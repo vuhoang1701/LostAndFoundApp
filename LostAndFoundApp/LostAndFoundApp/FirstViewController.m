@@ -103,6 +103,8 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    [self queryForTable];
+    [self loadObjects];
     [self.beaconManager startRangingBeaconsInRegion:self.beaconRegion];
      self.canSearch = 0;
 }

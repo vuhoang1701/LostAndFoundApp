@@ -37,7 +37,6 @@
     isPlay = false;
     _delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
     [super viewDidLoad];
-    [self initDetailItem];
     //Init and set dele for beaconmanager
     self.beaconManager = [ESTBeaconManager new];
     self.beaconManager.delegate = self; 
@@ -59,11 +58,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+     [self initDetailItem];
     [self.beaconManager startRangingBeaconsInRegion:self.beaconRegion];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+
     [self.beaconManager stopRangingBeaconsInRegion:self.beaconRegion];
      [self stopLoop];
 }
@@ -118,60 +119,6 @@
     // Update the map to display the current location.
     [self.mapView setRegion:region animated:YES];
     [self plotResults];
-    
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"Waiting";
-    [hud show:YES];
-
-    //Set switch Is lost
-    PFQuery *islost = [PFQuery queryWithClassName:@"Item"];
-    [islost whereKey:@"Major" equalTo: item.major];
-    [islost whereKey:@"Minor" equalTo: item.minor];
-    [islost whereKey:@"IsLost" equalTo:[NSNumber numberWithBool:YES]];
-    //NSError *error ;
-    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:islost,nil]];
-    [query  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            PFObject* object = objects.firstObject;
-            if (object!= nil) {
-                [self.LostSwitch setOn:YES animated:YES];
-            }
-            else
-            {
-                [self.LostSwitch setOn:NO animated:YES];
-            }
-            
-            
-        }
-
-        
-    }];
-    
-    PFQuery *notify = [PFQuery queryWithClassName:@"Item"];
-    [notify whereKey:@"Major" equalTo: item.major];
-    [notify whereKey:@"Minor" equalTo: item.minor];
-    [notify whereKey:@"Notify" equalTo:[NSNumber numberWithBool:YES]];
-    //NSError *error ;
-    PFQuery *querynotify = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:notify,nil]];
-    [querynotify  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            PFObject* object = objects.firstObject;
-            if (object!= nil) {
-                [self.NotifySwitch setOn:YES animated:YES];
-                [hud hide:YES];
-            }
-            else
-            {
-                [self.NotifySwitch setOn:NO animated:YES];
-                 [hud hide:YES];
-            }
-            
-            
-        }
-    }];
-    
 
 }
 
