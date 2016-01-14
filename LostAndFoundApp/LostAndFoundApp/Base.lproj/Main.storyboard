@@ -566,12 +566,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Fa-yzW">
                                 <rect key="frame" x="88" y="461" width="255" height="58"/>
-                                <state key="normal" image="EA5E9D4B-D24A-45B1-9667-5AAEAFBF2B6D"/>
+                                <state key="normal" image="BD9241AA-4EFB-4C9A-99C2-7252C6ED536F"/>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="push" identifier="ShowTabbarView" id="PJ4-Gw-BlD"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="42290E78-AF10-4B62-972B-B89688E56CD6" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-2t-BaU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0FE273B3-6AF7-4F71-A607-F8C78EE02656" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-2t-BaU">
                                 <rect key="frame" x="114" y="81" width="203" height="204"/>
                             </imageView>
                         </subviews>
@@ -840,7 +840,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="42290E78-AF10-4B62-972B-B89688E56CD6" width="256" height="256">
+        <image name="0FE273B3-6AF7-4F71-A607-F8C78EE02656" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -5281,7 +5281,7 @@ AAQOSAAEDlAABA5TAAQOWAAEDmcABA5rAAQOcgAEDnoABA6HAAQOjAAEDo4ABA6QAAQOlQAEDp0ABA6g
 AAQOpQAEDq0ABA6wAAQOwgAEDsUABA7KAAAAAAAABAEAAAAAAAAAPwAAAAAAAAAAAAAAAAAEDsw
 </mutableData>
         </image>
-        <image name="EA5E9D4B-D24A-45B1-9667-5AAEAFBF2B6D" width="401" height="82">
+        <image name="BD9241AA-4EFB-4C9A-99C2-7252C6ED536F" width="401" height="82">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

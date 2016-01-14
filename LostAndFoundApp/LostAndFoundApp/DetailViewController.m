@@ -119,6 +119,59 @@
     [self.mapView setRegion:region animated:YES];
     [self plotResults];
     
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Waiting";
+    [hud show:YES];
+
+    //Set switch Is lost
+    PFQuery *islost = [PFQuery queryWithClassName:@"Item"];
+    [islost whereKey:@"Major" equalTo: item.major];
+    [islost whereKey:@"Minor" equalTo: item.minor];
+    [islost whereKey:@"IsLost" equalTo:[NSNumber numberWithBool:YES]];
+    //NSError *error ;
+    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:islost,nil]];
+    [query  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            PFObject* object = objects.firstObject;
+            if (object!= nil) {
+                [self.LostSwitch setOn:YES animated:YES];
+            }
+            else
+            {
+                [self.LostSwitch setOn:NO animated:YES];
+            }
+            
+            
+        }
+
+        
+    }];
+    
+    PFQuery *notify = [PFQuery queryWithClassName:@"Item"];
+    [notify whereKey:@"Major" equalTo: item.major];
+    [notify whereKey:@"Minor" equalTo: item.minor];
+    [notify whereKey:@"Notify" equalTo:[NSNumber numberWithBool:YES]];
+    //NSError *error ;
+    PFQuery *querynotify = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:notify,nil]];
+    [querynotify  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            PFObject* object = objects.firstObject;
+            if (object!= nil) {
+                [self.NotifySwitch setOn:YES animated:YES];
+                [hud hide:YES];
+            }
+            else
+            {
+                [self.NotifySwitch setOn:NO animated:YES];
+                 [hud hide:YES];
+            }
+            
+            
+        }
+    }];
+    
 
 }
 
