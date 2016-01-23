@@ -91,7 +91,11 @@
     self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid  identifier:@"updateInRegion"];
     [_appDelegate setbackground:self.parentViewController.view];
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.allowsMultipleSelectionDuringEditing = NO;    
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    
+    fakeTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    [fakeTextField setHidden:YES];
+    [self.view addSubview:fakeTextField];
     
 }
 

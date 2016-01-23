@@ -12,6 +12,7 @@
 @interface FirstViewController : PFQueryTableViewController <UISearchBarDelegate, ListenerDelegate>
 @property (strong, nonatomic) Listener* listener;
 - (IBAction)btnVoice:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnVoice;
 
 @end
 

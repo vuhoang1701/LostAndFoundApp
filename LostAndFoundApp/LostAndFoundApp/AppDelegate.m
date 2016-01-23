@@ -93,6 +93,7 @@
           if(objects.count >0)
           {
                     [self EnableExitRange];
+              NSLog(@"Enable all range beacon");
           }
                 
                 
@@ -149,7 +150,7 @@
 - (void)beaconManager:(id)manager didExitRegion:(CLBeaconRegion *)region
 {
     
-
+    NSLog(@"Exit");
     
 }
 

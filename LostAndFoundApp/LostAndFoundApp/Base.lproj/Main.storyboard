@@ -125,6 +125,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnVoice" destination="iu7-NI-Xgo" id="pLC-d7-Xum"/>
                         <outlet property="searchBar" destination="Shy-Rh-BDE" id="OR8-kp-FNp"/>
                         <outlet property="searchDisplayController" destination="Ana-Se-JaM" id="ZTQ-mH-fqx"/>
                     </connections>
@@ -565,12 +566,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEC-Fa-yzW">
                                 <rect key="frame" x="88" y="461" width="255" height="58"/>
-                                <state key="normal" image="BAC44821-3916-44F4-A77D-A74EF48C8DA8"/>
+                                <state key="normal" image="170F1C76-2EAD-496A-885D-6FF4FC7FF4F2"/>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="push" identifier="ShowTabbarView" id="PJ4-Gw-BlD"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0384FF30-C998-4389-AAC6-3DCF5C0A09DD" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-2t-BaU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="02A14FD4-FFB2-43DF-A229-733ACE574471" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-2t-BaU">
                                 <rect key="frame" x="114" y="81" width="203" height="204"/>
                             </imageView>
                         </subviews>
@@ -845,7 +846,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0384FF30-C998-4389-AAC6-3DCF5C0A09DD" width="256" height="256">
+        <image name="02A14FD4-FFB2-43DF-A229-733ACE574471" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -5286,7 +5287,7 @@ AAQOSAAEDlAABA5TAAQOWAAEDmcABA5rAAQOcgAEDnoABA6HAAQOjAAEDo4ABA6QAAQOlQAEDp0ABA6g
 AAQOpQAEDq0ABA6wAAQOwgAEDsUABA7KAAAAAAAABAEAAAAAAAAAPwAAAAAAAAAAAAAAAAAEDsw
 </mutableData>
         </image>
-        <image name="BAC44821-3916-44F4-A77D-A74EF48C8DA8" width="401" height="82">
+        <image name="170F1C76-2EAD-496A-885D-6FF4FC7FF4F2" width="401" height="82">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

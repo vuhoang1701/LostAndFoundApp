@@ -34,6 +34,7 @@
 @synthesize labelTime;
 @synthesize item;
 - (void)viewDidLoad {
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     isPlay = false;
     _delegate =(AppDelegate*) [UIApplication sharedApplication].delegate;
     [super viewDidLoad];

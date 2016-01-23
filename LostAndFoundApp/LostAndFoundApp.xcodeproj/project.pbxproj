@@ -23,9 +23,12 @@
 		0F0E2F551C481DD700BBC5C8 /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F511C481DD700BBC5C8 /* add@3x.png */; };
 		0F0E2F561C481DD700BBC5C8 /* add1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F521C481DD700BBC5C8 /* add1@2x.png */; };
 		0F0E2F571C481DD700BBC5C8 /* add1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F531C481DD700BBC5C8 /* add1@3x.png */; };
+		0F0E2F5A1C49614600BBC5C8 /* Microphone Filled-25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F581C49614600BBC5C8 /* Microphone Filled-25@2x.png */; };
+		0F0E2F5B1C49614600BBC5C8 /* Microphone Filled-25@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F591C49614600BBC5C8 /* Microphone Filled-25@3x.png */; };
+		0F0E2F5E1C4963DF00BBC5C8 /* Right 2-25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F5C1C4963DF00BBC5C8 /* Right 2-25@2x.png */; };
+		0F0E2F5F1C4963DF00BBC5C8 /* Right 2-25@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0E2F5D1C4963DF00BBC5C8 /* Right 2-25@3x.png */; };
 		0F15BA4F1C1B259C00425023 /* Listener.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15BA431C1B259C00425023 /* Listener.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0F15BA511C1B259C00425023 /* SineWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F15BA471C1B259C00425023 /* SineWaveViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0F15BA521C1B259C00425023 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15BA491C1B259C00425023 /* bg.png */; };
 		0F15BA531C1B259C00425023 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F15BA4A1C1B259C00425023 /* mic.png */; };
 		0F15BA541C1B259C00425023 /* SineWaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F15BA4B1C1B259C00425023 /* SineWaveViewController.xib */; };
 		0F15BA551C1B259C00425023 /* Speex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F15BA4C1C1B259C00425023 /* Speex.framework */; };
@@ -132,11 +135,14 @@
 		0F0E2F511C481DD700BBC5C8 /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add@3x.png"; path = "Image/add@3x.png"; sourceTree = "<group>"; };
 		0F0E2F521C481DD700BBC5C8 /* add1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add1@2x.png"; path = "Image/add1@2x.png"; sourceTree = "<group>"; };
 		0F0E2F531C481DD700BBC5C8 /* add1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add1@3x.png"; path = "Image/add1@3x.png"; sourceTree = "<group>"; };
+		0F0E2F581C49614600BBC5C8 /* Microphone Filled-25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Microphone Filled-25@2x.png"; path = "Image/Microphone Filled-25@2x.png"; sourceTree = "<group>"; };
+		0F0E2F591C49614600BBC5C8 /* Microphone Filled-25@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Microphone Filled-25@3x.png"; path = "Image/Microphone Filled-25@3x.png"; sourceTree = "<group>"; };
+		0F0E2F5C1C4963DF00BBC5C8 /* Right 2-25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Right 2-25@2x.png"; path = "Image/Right 2-25@2x.png"; sourceTree = "<group>"; };
+		0F0E2F5D1C4963DF00BBC5C8 /* Right 2-25@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Right 2-25@3x.png"; path = "Image/Right 2-25@3x.png"; sourceTree = "<group>"; };
 		0F15BA421C1B259C00425023 /* Listener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Listener.h; path = LostAndFoundApp/SpeechToText/Listener.h; sourceTree = "<group>"; };
 		0F15BA431C1B259C00425023 /* Listener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Listener.m; path = LostAndFoundApp/SpeechToText/Listener.m; sourceTree = "<group>"; };
 		0F15BA461C1B259C00425023 /* SineWaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SineWaveViewController.h; path = LostAndFoundApp/SpeechToText/SineWaveViewController.h; sourceTree = "<group>"; };
 		0F15BA471C1B259C00425023 /* SineWaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SineWaveViewController.m; path = LostAndFoundApp/SpeechToText/SineWaveViewController.m; sourceTree = "<group>"; };
-		0F15BA491C1B259C00425023 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		0F15BA4A1C1B259C00425023 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
 		0F15BA4B1C1B259C00425023 /* SineWaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SineWaveViewController.xib; sourceTree = "<group>"; };
 		0F15BA4C1C1B259C00425023 /* Speex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Speex.framework; sourceTree = "<group>"; };
@@ -286,7 +292,6 @@
 		0F15BA481C1B259C00425023 /* SpeechToText */ = {
 			isa = PBXGroup;
 			children = (
-				0F15BA491C1B259C00425023 /* bg.png */,
 				0F15BA4A1C1B259C00425023 /* mic.png */,
 				0F15BA4B1C1B259C00425023 /* SineWaveViewController.xib */,
 				0F15BA4C1C1B259C00425023 /* Speex.framework */,
@@ -466,6 +471,10 @@
 				0F4CF8871C2EB1C90010D20F /* logo.png */,
 				0F4CF8851C2E4AAD0010D20F /* Cloud.png */,
 				0F6F2FEF1C284520009B549F /* Right 2-25.png */,
+				0F0E2F5C1C4963DF00BBC5C8 /* Right 2-25@2x.png */,
+				0F0E2F5D1C4963DF00BBC5C8 /* Right 2-25@3x.png */,
+				0F0E2F581C49614600BBC5C8 /* Microphone Filled-25@2x.png */,
+				0F0E2F591C49614600BBC5C8 /* Microphone Filled-25@3x.png */,
 				0F6F2FED1C284106009B549F /* Microphone Filled-25.png */,
 				0FAAE4981C1298060077801B /* images.jpeg */,
 				0FAAE4991C1298060077801B /* images.png */,
@@ -669,6 +678,7 @@
 				0F6F2FEE1C284106009B549F /* Microphone Filled-25.png in Resources */,
 				0F4CF8881C2EB1C90010D20F /* logo.png in Resources */,
 				0FAAE49A1C1298060077801B /* images.jpeg in Resources */,
+				0F0E2F5B1C49614600BBC5C8 /* Microphone Filled-25@3x.png in Resources */,
 				0F278BB51C1290DF00AE0794 /* background.png in Resources */,
 				0FAAE49B1C1298060077801B /* images.png in Resources */,
 				0FD403431BDE129700E3180D /* logout-button-blue-hi.png in Resources */,
@@ -685,7 +695,9 @@
 				0FD4039A1BDF7BAC00E3180D /* ibecon.png in Resources */,
 				0FCF06981BC596250080F563 /* LaunchScreen.storyboard in Resources */,
 				0F0E2F451C4816E300BBC5C8 /* Your Item1.png in Resources */,
+				0F0E2F5E1C4963DF00BBC5C8 /* Right 2-25@2x.png in Resources */,
 				0F0E2F4D1C481B8D00BBC5C8 /* setting@3x.png in Resources */,
+				0F0E2F5A1C49614600BBC5C8 /* Microphone Filled-25@2x.png in Resources */,
 				0F0E2F461C4816E300BBC5C8 /* Your Item1@2x.png in Resources */,
 				0FF222E31C11CB0A00FD3D9F /* Your Item.png in Resources */,
 				0F4CF8861C2E4AAD0010D20F /* Cloud.png in Resources */,
@@ -699,13 +711,13 @@
 				0F8F0E831C3184B4006774B8 /* drum01.mp3 in Resources */,
 				0F0E2F4E1C481B8D00BBC5C8 /* setting1@2x.png in Resources */,
 				0FCF06951BC596250080F563 /* Assets.xcassets in Resources */,
-				0F15BA521C1B259C00425023 /* bg.png in Resources */,
 				0FF222DF1C11CB0A00FD3D9F /* add1.png in Resources */,
 				0F0E2F471C4816E300BBC5C8 /* Your Item1@3x.png in Resources */,
 				0FCF06931BC596250080F563 /* Main.storyboard in Resources */,
 				0FD4034F1BDF259300E3180D /* ibeacon2.jpeg in Resources */,
 				0F8F0E811C318174006774B8 /* peep.wav in Resources */,
 				0F0E2F571C481DD700BBC5C8 /* add1@3x.png in Resources */,
+				0F0E2F5F1C4963DF00BBC5C8 /* Right 2-25@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,7 +850,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
@@ -878,7 +890,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -900,7 +912,7 @@
 					"$(PROJECT_DIR)/LostAndFoundApp/SpeechToText/SpeechToText",
 				);
 				INFOPLIST_FILE = LostAndFoundApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HoangVu.LostAndFoundApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -922,7 +934,7 @@
 					"$(PROJECT_DIR)/LostAndFoundApp/SpeechToText/SpeechToText",
 				);
 				INFOPLIST_FILE = LostAndFoundApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HoangVu.LostAndFoundApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

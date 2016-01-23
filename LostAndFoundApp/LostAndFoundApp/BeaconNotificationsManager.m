@@ -75,6 +75,7 @@
                     notification.alertBody = message;
                     notification.soundName = UILocalNotificationDefaultSoundName;
                     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+                    NSLog(@"Showed notification");
                 }
                 
                 
