@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
 @property (nonatomic, strong) Item *item;
+@property (weak, nonatomic) IBOutlet UIButton *trackedLocationButton;
 
 @property (weak, nonatomic) IBOutlet UISwitch *LostSwitch;
 

@@ -463,6 +463,10 @@
         [self.listener beginRecording];
         return NO;
     }
+    if ([arrayOfString[9] isEqualToString:@""]) {
+        
+        return NO;
+    }
     NSLog(@"responseString: %@",arrayOfString[9]);
         canSearch = 1;
         

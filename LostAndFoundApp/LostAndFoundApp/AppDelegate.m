@@ -186,6 +186,7 @@
 -(void) UpdateLocationLostBeacon: (NSNumber*) major withMinor: (NSNumber*) minor
 {
     
+    
     PFQuery *islost = [PFQuery queryWithClassName:@"Item"];
     [islost whereKey:@"IsLost" equalTo:[NSNumber numberWithBool:YES]];
     [islost whereKey:@"Major" equalTo: major];
@@ -197,6 +198,12 @@
             __unused NSString *string= [NSString stringWithFormat: @"Major %d , Minor %d",[[object objectForKey:@"Minor"] intValue],[[object objectForKey:@"Major"] intValue]  ];
             float longi = self.currentlocation.coordinate.longitude;
             float lat = self.currentlocation.coordinate.latitude;
+            double latitude = [[object objectForKey:@"Latitude"] floatValue];
+            double longitude = [[object objectForKey:@"Longitude"] floatValue];
+            if([self CheckDistanceLocationWithLongitude:longitude withLatitude:latitude])
+            {
+                [self InsertLastedPointWithLongitude:longi withLatitude:lat withMajor:major withMinor:minor];
+            }
             [object setObject:[NSString stringWithFormat:@"%f",longi] forKey:@"Longitude"];
             [object setObject:[NSString stringWithFormat:@"%f",lat] forKey:@"Latitude"];
             [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -211,6 +218,64 @@
 
         
     }];
+}
+
+-(void) InsertLastedPointWithLongitude: (double) longitude withLatitude: (double) latgitude withMajor: (NSNumber*) major withMinor: (NSNumber*) minor
+{
+    
+    PFQuery* getLastPoint = [PFQuery queryWithClassName:@"TrackingHistory"];
+    [getLastPoint whereKey:@"Major" equalTo: major];
+    [getLastPoint whereKey:@"Minor" equalTo: minor];
+    //[getLastPoint orderByDescending:@"createdAt"];
+    [getLastPoint getFirstObjectInBackgroundWithBlock:^(PFObject *object,NSError* error) {
+        if (object) {
+            NSLog(@"%@", [object updatedAt]);
+            double latitude = [[object objectForKey:@"Lat"] floatValue];
+            double longitude = [[object objectForKey:@"Long"] floatValue];
+            if ([self CheckDistanceLocationWithLongitude:longitude withLatitude:latitude]) {
+                PFObject *item = [PFObject objectWithClassName:@"TrackingHistory"];
+                [item setObject: major forKey:@"Major"];
+                [item setObject: minor forKey:@"Minor"];
+                [item setObject:[NSString stringWithFormat:@"%f",longitude] forKey:@"Long"];
+                [item setObject:[NSString stringWithFormat:@"%f",latgitude] forKey:@"Lat"];
+                [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    if(succeeded)
+                    {
+                        NSLog(@"Add History Tracking");
+                    }
+                    
+                }];
+            }
+            
+        } else if (!object){
+            PFObject *item = [PFObject objectWithClassName:@"TrackingHistory"];
+            [item setObject: major forKey:@"Major"];
+            [item setObject: minor forKey:@"Minor"];
+            [item setObject:[NSString stringWithFormat:@"%f",longitude] forKey:@"Long"];
+            [item setObject:[NSString stringWithFormat:@"%f",latgitude] forKey:@"Lat"];
+            [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if(succeeded)
+                {
+                    NSLog(@"Add First History Tracking");
+                }
+                
+            }];
+        }
+        
+        
+    }];
+    
+  
+}
+
+- (bool) CheckDistanceLocationWithLongitude: (double) longitude withLatitude: (double) latgitude
+{
+    CLLocation* newPoint = [[CLLocation alloc] initWithLatitude:latgitude longitude:longitude];
+    CLLocationDistance distance = [self.currentlocation distanceFromLocation:newPoint]* 0.621371192 * 1.6093;
+    if( distance >= 500 )
+        return true;
+    
+    return false;
 }
 - (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons
              inRegion:(CLBeaconRegion *)region {

@@ -6,6 +6,7 @@
 //  Copyright © 2015 HoangVu. All rights reserved.
 //
 
+#import "TrackedLocationsViewController.h"
 #import "DetailViewController.h"
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
@@ -114,8 +115,8 @@
     locationitem.longitude = [item.longitude floatValue];
     region.center = locationitem;
     MKCoordinateSpan span;
-    span.latitudeDelta = 0.5;
-    span.longitudeDelta = 0.5;
+    span.latitudeDelta = 0.05;
+    span.longitudeDelta = 0.05;
     region.span = span;
     // Update the map to display the current location.
     [self.mapView setRegion:region animated:YES];
@@ -456,5 +457,12 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"trackedLocations"]) {
+        TrackedLocationsViewController *destViewController = segue.destinationViewController;
+        destViewController.item = item;
+        
+    }
+}
 
 @end
